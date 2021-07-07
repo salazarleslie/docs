@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-deployment
+  labels:
+    app: hello-world
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+        - 
+          name: hello-world
+          image: linodedocs/kubernetes_using-octant-with-kubernetes-a-tutorial_hello-world:v1
+          ports:
+            - 
+              containerPort: 80
